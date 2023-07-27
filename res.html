@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekart</title>
+  <link rel="website icon" type="png" href="ekart_logo.png">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: black;
+    }
+
+    .navbar {
+      background-color: #6534ae;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 58px;
+      margin-right: 13px;
+    }
+
+    .logo h3 {
+      font-family: 'Nanum Myeongjo', serif;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+      font-family: 'Nanum Myeongjo', serif;
+    }
+
+    .nav-links li:first-child {
+      margin-left: 0;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 2px solid gold;
+      color: gold;
+    }
+
+    /* Slider styles */
+
+    /* Slider styles */
+    .slider-container {
+      width: 100%;
+      height: 300px;
+      /* Adjust the height as needed */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      animation: slideAnimation 15s infinite;
+    }
+
+    .slide:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .slide:nth-child(2) {
+      animation-delay: 5s;
+    }
+
+    .slide:nth-child(3) {
+      animation-delay: 10s;
+    }
+
+    .slide img {
+      width: 74%;
+      height: 100%;
+      /* object-fit: fill; */
+      padding: 10px 140px;
+      margin: 1px 40px;
+    }
+
+    @keyframes slideAnimation {
+
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      20%,
+      80% {
+        opacity: 1;
+      }
+    }
+
+
+
+
+    .flip-card {
+      display: inline-block;
+      background-color: transparent;
+      width: 360px;
+      height: 360px;
+      padding: 20px 10px;
+      margin: 2px 60px;
+      perspective: 1000px;
+      /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+      cursor: pointer;
+      transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      /* Safari */
+      backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    /* Style the back side */
+    .flip-card-back {
+      background-color: rgb(73, 73, 73);
+      color: #60f5f2;
+      transform: rotateY(180deg);
+    }
+
+    /* Your existing styles */
+
+    /* Add this additional CSS for card-specific flip effect */
+    .card1:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card2:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card3:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card4:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card5:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card6:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Repeat the above pattern for the other cards */
+
+
+    /* Your existing CSS */
+
+    /* Add this CSS for the "About Us" section */
+    #about {
+      text-align: center;
+      color: #333;
+    }
+
+    #about h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: blanchedalmond;
+    }
+
+    #about p {
+      color: blanchedalmond;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    /* Style the "About Us" section background and padding */
+    #about {
+      background-color: black;
+      padding: 23px;
+    }
+
+
+    /* Your existing CSS */
+
+    /* Add this CSS for the footer */
+    .footer {
+      background-color: #6534ae;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-family: 'Nanum Myeongjo', serif;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Responsive Navbar */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        margin-top: 20px;
+      }
+    }
+
+    /* Responsive Slider */
+    @media screen and (max-width: 768px) {
+      .slider-container {
+        height: 200px;
+      }
+
+      .slide img {
+        padding: 10px;
+        margin: 1px;
+      }
+    }
+
+    /* Responsive Flip Cards */
+    @media screen and (max-width: 768px) {
+      .flip-card {
+        width: 80%;
+        margin: 10px auto;
+      }
+    }
+
+    /* Responsive About Us Section */
+    @media screen and (max-width: 768px) {
+      #about h2 {
+        font-size: 24px;
+      }
+
+      #about p {
+        font-size: 14px;
+      }
+    }
+
+    /* Responsive Footer */
+    @media screen and (max-width: 768px) {
+      .footer {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="ekart_logo.png" alt="Company Logo">
+      <h3>Ekart</h3>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="slider-container">
+    <div class="slide">
+      <img src="sliding1.png" alt="Slide 1">
+    </div>
+    <div class="slide">
+      <img src="sliding2.png" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="sliding3.png" alt="Slide 3">
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner card1">
+      <div class="flip-card-front">
+        <img src="sliding1.png" alt="item-1" style="width:100%;height:100%;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Laptop</h1>
+        <ul>
+          <li>15-inch display</li>
+          <li>i7 processor</li>
+          <li>Amoled display</li>
+          <li>512 SSD</li>
+        </ul>
+
+        <h1 style="color: deeppink;">Price:&nbsp; Rs.80000</h1>
+        <!-- <p>We love that guy</p> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner card2">
+      <div class="flip-card-front">
+        <img src="smartwatch.png" alt="item-2" style="width:100%;height:100%;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Smart Watch</h1>
+        <ul>
+          <li>Steps Tracking</li>
+          <li>Bluetooth Enabled</li>
+          <li>Amoled display</li>
+          <li>Heart-Rate Monitoring</li>
+        </ul>
+
+        <h1 style="color: deeppink;">Price:&nbsp; Rs.5000</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner card3">
+      <div class="flip-card-front">
+        <img src="shoes.png" alt="item-3" style="width:100%;height:100%;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Shoes</h1>
+        <ul>
+          <li>Comfortable Sole</li>
+          <li>Outer Material: Mesh</li>
+          <li>Inner Material: Cushion</li>
+          <li>Colour: Multicolor</li>
+        </ul>
+
+        <h1 style="color: deeppink;">Price:&nbsp; Rs.1700</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner card4">
+      <div class="flip-card-front">
+        <img src="tv.png" alt="item-4" style="width:100%;height:100%;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Smart TV</h1>
+        <ul>
+          <li>Display: 43 inch(108 cm)</li>
+          <li>Supported Apps: Netflix|Prime Video|Disney+Hotstar|YouTube</li>
+          <li>Operating System: Android-based</li>
+          <li>Resolution: Full HD 1920 x 1080 Pixels</li>
+        </ul>
+
+        <h1 style="color: deeppink;">Price:&nbsp; Rs.35000</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner card5">
+      <div class="flip-card-front">
+        <img src="cosmetics.png" alt="item-5" style="width:100%;height:100%;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Cosmetics</h1>
+        <ul>
+          <li>Skin friendly</li>
+          <li>Chemical free</li>
+          <li>Longer lasting</li>
+          <li>Water-resistant</li>
+        </ul>
+
+        <h1 style="color: deeppink;">Price:&nbsp; Rs.1500</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner card6">
+      <div class="flip-card-front">
+        <img src="phone.png" alt="item-6" style="width:100%;height:100%;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Phone</h1>
+        <ul>
+          <li>6.6 inch Full HD display</li>
+          <li>Snapdragon 8Gen processor</li>
+          <li>6GB RAM + 256GB ROM</li>
+          <li>108MP rear camera | 32MP front camera</li>
+        </ul>
+
+        <h1 style="color: deeppink;">Price:&nbsp; Rs.40000</h1>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div style="background-color: black; padding: 50px;">
+      <h2>About Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis sapien at sagittis vehicula. Integer
+        luctus odio et ipsum malesuada, non eleifend risus ullamcorper. Vestibulum ante ipsum primis in faucibus orci
+        luctus et ultrices posuere cubilia Curae; Nulla facilisi. Vestibulum scelerisque justo sed libero feugiat, vel
+        malesuada libero egestas. Vivamus vitae felis eu metus vulputate mattis in in dolor. Sed malesuada bibendum
+        ligula eget pellentesque.
+      </p>
+      <p>
+        Nunc efficitur suscipit ex, eget pellentesque tortor venenatis a. Suspendisse maximus bibendum fermentum.
+        Pellentesque in dolor quis purus ullamcorper varius. Nulla facilisi. Fusce bibendum sapien id quam ultricies, at
+        varius ex eleifend. Donec varius lacus sit amet massa malesuada pellentesque. Nullam id mauris quam.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2023 Ekart. All rights reserved.</p>
+  </footer>
+
+
+  <!-- Your page content goes here -->
+
+</body>
+
+</html>
